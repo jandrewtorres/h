@@ -1,5 +1,5 @@
 # Stage 1: Build static frontend assets.
-FROM node:16-alpine as build
+FROM node:16-alpine@sha256:2ca257ee86a65e8d7fe6bb0ed3df2e7336b7c5a1662512627c99428beed8bdae as build
 
 ENV NODE_ENV production
 
