@@ -1,5 +1,5 @@
 # Stage 1: Build static frontend assets.
-FROM node:16-alpine as build
+FROM node:16-alpine@sha256:2ca257ee86a65e8d7fe6bb0ed3df2e7336b7c5a1662512627c99428beed8bdae as build
 
 ENV NODE_ENV production
 
@@ -17,7 +17,7 @@ COPY h/static ./h/static
 RUN npm run build
 
 # Stage 2: Build the rest of the app using the build output from Stage 1.
-FROM python:3.8.9-alpine3.13
+FROM python:3.8.9-alpine3.13@sha256:e5bb2c97a121cbc773d56b55e744e2e67450bd9c1ea6b5c93af77061e745daea
 LABEL maintainer="Hypothes.is Project and contributors"
 
 # Install system build and runtime dependencies.
